@@ -10,6 +10,7 @@ var sendingEnd = false
 var can_send = false
 var started = false
 var dlspos:Vector2
+var transformerpos: Vector2
 
 func initialise():
 	self.selected

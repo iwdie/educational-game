@@ -3,6 +3,7 @@ extends Sprite2D
 @export var boxType: String
 @export var sending = false
 @export var retryattempt = 0
+@export var eventType: String
 
 
 func _ready() -> void:
@@ -10,6 +11,7 @@ func _ready() -> void:
 	print("event is color", boxType)
 	ConveyerController.events.append(self)
 	var stylebox = $hoverlabel.get_theme_stylebox("normal")
+	
 	if boxType == 'Red':
 		
 		if stylebox is StyleBoxFlat:

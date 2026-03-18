@@ -35,26 +35,31 @@ func _on_area_2d_area_entered(area):
 		area.get_parent().brokerpos = self.global_position + Vector2(0,33)
 		var original_box = area.get_parent()
 
-		for i in range(ConveyerController.destination.size()):
+		if area.get_parent().eventType !=  "pinkRectangle":
+			for i in range(ConveyerController.destination.size()):
 
-			var target_pos = $entrance.global_position
+				var target_pos = $entrance.global_position
 
-			var new_box = original_box.duplicate()
-			get_tree().current_scene.add_child(new_box)
-
-			
-			new_box.global_position = target_pos + Vector2(0, 100)
+				var new_box = original_box.duplicate()
+				get_tree().current_scene.add_child(new_box)
 
 			
+				new_box.global_position = target_pos + Vector2(0, 100)
+
+			
+				var tween = create_tween()
+				tween.tween_property(
+					new_box,
+					"global_position",
+					ConveyerController.destination[i],
+					2.0
+				).set_trans(Tween.TRANS_QUAD)
+
+			original_box.queue_free()
+		
+		else:
 			var tween = create_tween()
-			tween.tween_property(
-				new_box,
-				"global_position",
-				ConveyerController.destination[i],
-				2.0
-			).set_trans(Tween.TRANS_QUAD)
-
-		original_box.queue_free()
+			tween.tween_property(area.get_parent(),"global_position",ConveyerController.transformerpos,2).set_trans(Tween.TRANS_QUAD)
 		# Replace with function body.
 
 
