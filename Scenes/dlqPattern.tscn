@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtw62fpf26cjh"]
+[gd_scene load_steps=14 format=3 uid="uid://dtw62fpf26cjh"]
 
 [ext_resource type="Texture2D" uid="uid://dlnjpu1sbekqf" path="res://2D Assets/conveyer texture.png" id="1_o080m"]
 [ext_resource type="Script" path="res://Scripts/dlqPattern.gd" id="1_tk71p"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cdog2bwjc5gc6" path="res://Scenes/dls.tscn" id="6_yts6n"]
 [ext_resource type="Script" path="res://Scripts/event_button.gd" id="11_fwn7q"]
 [ext_resource type="Script" path="res://Scripts/restart.gd" id="11_pd3ou"]
+[ext_resource type="PackedScene" uid="uid://c1r3b0105y0fm" path="res://broker.tscn" id="13_5p2gl"]
 [ext_resource type="PackedScene" uid="uid://cd34jg1k76o78" path="res://Scenes/both_blockage.tscn" id="13_cjnva"]
 [ext_resource type="Script" path="res://Scripts/both_blockage.gd" id="14_a43iy"]
 
@@ -118,6 +119,9 @@ script = ExtResource("14_a43iy")
 
 [node name="CollisionShape2D" parent="Blockage/Area2D" index="0"]
 position = Vector2(0, 0)
+
+[node name="broker" parent="." instance=ExtResource("13_5p2gl")]
+position = Vector2(530, 216)
 
 [connection signal="area_entered" from="dls" to="." method="_on_dls_area_entered"]
 [connection signal="input_event" from="dls" to="." method="_on_dls_input_event"]

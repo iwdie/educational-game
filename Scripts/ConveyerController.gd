@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 
 func create_conveyor():
 
-	conveyer[conveyerInd].set_point_position(0, selected.get_position())
+	conveyer[conveyerInd].set_point_position(0, selected.get_global_position())
 	conveyer[conveyerInd].set_point_position(1, destination[conveyerInd])
 	AudioManager.play_construction()
 	conveyerInd+=1

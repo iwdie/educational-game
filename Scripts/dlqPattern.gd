@@ -5,7 +5,7 @@ var dlsclicked = false
 
 func _ready() -> void:
 	ConveyerController.can_send = false 
-	pass
+	
 	
 func _process(delta: float) -> void:
 	pass
@@ -47,10 +47,11 @@ func _on_area_2d_area_entered(area):
 		for event in blockedEvents:
 			if event == null or not event.is_inside_tree():
 				continue  # skip already deleted or invalid nodes
+			if ConveyerController.conveyerInd>0:
+				event.sending = true  
+				var tween = get_tree().create_tween()
+				tween.tween_property(event, "position", blockagepoint.position, 2).set_trans(Tween.TRANS_LINEAR)
+				await tween.finished
 			
-			event.sending = true  
-			var tween = get_tree().create_tween()
-			tween.tween_property(event, "position", blockagepoint.position, 2).set_trans(Tween.TRANS_LINEAR)
-			await tween.finished
 
 	 # Replace with function body.
