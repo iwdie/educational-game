@@ -41,3 +41,11 @@ func duplicate_events() -> void:
 func _on_broker_click_area_entered(area):
 	if area.is_in_group("box"):
 		pass
+
+
+func _on_broker_click_mouse_entered():
+	$hoverlabel.visible = true # Replace with function body.
+
+
+func _on_broker_click_mouse_exited():
+	$hoverlabel.visible = false # Replace with function body.
