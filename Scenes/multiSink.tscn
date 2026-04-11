@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/event_button.gd" id="12_t1xnr"]
 [ext_resource type="PackedScene" uid="uid://bquha0225l1ju" path="res://Scenes/draggable_filter_blue.tscn" id="13_w7pdg"]
 [ext_resource type="Script" path="res://Scripts/restart.gd" id="15_hhntj"]
-[ext_resource type="PackedScene" uid="uid://c1r3b0105y0fm" path="res://broker.tscn" id="15_invia"]
+[ext_resource type="PackedScene" uid="uid://c1r3b0105y0fm" path="res://Scenes/broker.tscn" id="15_invia"]
 [ext_resource type="PackedScene" uid="uid://bi4a6dl8q6rnj" path="res://Scenes/draggable_filter_red.tscn" id="16_nxrac"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2e8j"]
