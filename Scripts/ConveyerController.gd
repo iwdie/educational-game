@@ -9,6 +9,7 @@ var dragging
 var sendingEnd = false
 var can_send = false
 var started = false
+var brokerpos: Vector2
 
 func initialise():
 	self.selected
