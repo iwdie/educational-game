@@ -1,25 +1,51 @@
-extends Sprite2D
+extends Node2D
 
 
-const event_script = preload("res://Scripts/event_box.gd")
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	create_event("")
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _ready():
 	pass
 
-func create_event(color: String) -> void:
-	var event = Sprite2D.new()
-	event.texture = load("res://2D Assets/boxes/redBox.png")
-	var area = Area2D.new()
-	area.shape = RectangleShape2D.new()
-	area.shape.set_size(Vector2(1, 1))
-	event.position = self.position
-	area.set_script(event_script)
-	event.add_child(area)
-	self.add_child(event)
+
+func _process(delta):
+	pass
+
+
+func duplicate_events() -> void:
+	var dest_size = ConveyerController.destination.size()
+
+	if dest_size <= 1:
+		ConveyerController.can_send = true
+		return
+
+	var original_events = ConveyerController.events.duplicate()
+	var new_events = []
+
+
+	for i in range(original_events.size()):
+		var original_box = original_events[i]
+		if not is_instance_valid(original_box):
+			continue
+
+		new_events.append(original_box)
+
+		for j in range(dest_size - 1):
+			var clone = original_box.duplicate()
+			get_tree().current_scene.add_child(clone)
+			clone.global_position = original_box.global_position 
+			new_events.append(clone)
+
+	ConveyerController.events = new_events
+	print("Events after duplication: ", ConveyerController.events.size())
+	ConveyerController.can_send = true
+
+
+func _on_broker_click_area_entered(area):
+	if area.is_in_group("box"):
+		pass
+
+
+func _on_broker_click_mouse_entered():
+	$hoverlabel.visible = true # Replace with function body.
+
+
+func _on_broker_click_mouse_exited():
+	$hoverlabel.visible = false # Replace with function body.

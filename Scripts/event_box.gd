@@ -36,15 +36,7 @@ func _ready() -> void:
 			$hoverlabel.set_text("[center][b]EVENT G")
 			
 
-func _input_event(viewport, event, shape_idx) -> void:
-	print(event)
-	if event.is_pressed():
-		self.on_click()
-		
-func on_click():
-	print("hi")
-	ConveyerController.selected = self
-	AudioManager.play_click_start()
+
 
 
 func _on_area_2d_mouse_entered():
