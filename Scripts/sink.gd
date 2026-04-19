@@ -11,14 +11,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-	
 
 
 func _on_area_2d_mouse_entered():
-	$Panel.show() # Replace with function body.
-
+	$hoverlabel.visible = true # Replace with function body.
 
 
 func _on_area_2d_mouse_exited():
-	$Panel.hide() # Replace with function body.
+	$hoverlabel.visible = false# Replace with function body.

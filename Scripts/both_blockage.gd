@@ -17,7 +17,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func _on_area_2d_area_entered(area):
-	if( consumed == false):
-		$AnimationPlayer.play("crush") 
-		consumed = true
+	if area.is_in_group("Box"):
+		if( consumed == false):
+			$AnimationPlayer.play("crush") 
+			consumed = true
 		# Replace with function body.
