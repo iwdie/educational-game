@@ -9,6 +9,7 @@ var dragging
 var sendingEnd = false
 var can_send = false
 var started = false
+var olderlevels = true
 var brokerpos: Vector2
 
 func initialise():
@@ -21,6 +22,7 @@ func initialise():
 	self.sendingEnd = false
 	self.can_send = false
 	self.started = false
+	
 
 func setup(conveyer) -> void:
 	self.conveyer.append(conveyer)
@@ -58,4 +60,5 @@ func send_event():
 			tween.tween_property(events[n], "position", destination[n%conveyerInd], 2).set_trans(tween.TRANS_LINEAR)
 			if n%conveyerInd==conveyerInd-1:
 				await tween.finished
-	Level.next_level()
+	if olderlevels:
+		Level.next_level()

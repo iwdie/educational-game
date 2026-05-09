@@ -21,7 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 		Level.transformerUsed = true
 
 
-		box.boxType = "Blue"
+		box.boxType = "PinkRect"
 		box.set_texture(preload("res://2D Assets/boxes/blueBoxPinkRectangle.png"))
 		print("Transformed box to: ", box.boxType)
 
