@@ -14,5 +14,6 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	print("dest_size:",ConveyerController.destination.size())
 	$"../broker".duplicate_events()
-	$"../Timer".start()
+	if  ConveyerController.olderlevels == false:
+		$"../Timer".start()
 	Level.initialise()
