@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://crbbdu26tlg2k" path="res://2D Assets/background.png" id="1_atg3b"]
 [ext_resource type="Texture2D" uid="uid://dlnjpu1sbekqf" path="res://2D Assets/conveyer texture.png" id="1_m5e4w"]
-[ext_resource type="Script" path="res://Scenes/transformation_level.gd" id="1_udmkm"]
 [ext_resource type="Script" path="res://Scripts/conveyor.gd" id="2_18ptq"]
 [ext_resource type="PackedScene" uid="uid://b1bqnamawp7c0" path="res://Scenes/transformer.tscn" id="3_6jpat"]
 [ext_resource type="PackedScene" uid="uid://whu4rwgsyl8u" path="res://Scenes/sink.tscn" id="4_q0n1r"]
@@ -15,6 +14,26 @@
 [ext_resource type="Texture2D" uid="uid://bo4kxgbq7723j" path="res://2D Assets/funnels/blueFunnelPinkRectangle.png" id="11_l1dfm"]
 [ext_resource type="Texture2D" uid="uid://bqv0boinhil7v" path="res://2D Assets/funnels/blueFunnelYellowRectangle.png" id="13_gao6l"]
 [ext_resource type="Script" path="res://Scripts/restart.gd" id="15_b4lth"]
+
+[sub_resource type="GDScript" id="GDScript_d2k0l"]
+script/source = "extends Node2D
+
+func _ready():
+	Level.levelind = 4
+	ConveyerController.olderlevels = false
+
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+
+
+func _on_timer_timeout():
+	Level.next_level() # Replace with function body.
+"
 
 [sub_resource type="Theme" id="Theme_wguv2"]
 
@@ -29,7 +48,7 @@ corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 
 [node name="transformation_level" type="Node2D"]
-script = ExtResource("1_udmkm")
+script = SubResource("GDScript_d2k0l")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(908, 506)
@@ -60,15 +79,15 @@ position = Vector2(403, 540)
 scale = Vector2(0.5, 0.5)
 expectedType = "PinkRect"
 
-[node name="broker" parent="." instance=ExtResource("5_grh8x")]
-position = Vector2(393, 154)
-scale = Vector2(0.7, 0.7)
-
 [node name="BoxA" parent="." instance=ExtResource("6_3fr4m")]
-position = Vector2(385, 88)
-scale = Vector2(0.5, 0.5)
+position = Vector2(402, 72)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("8_pn2ri")
 boxType = "YellowRect"
+
+[node name="broker" parent="." instance=ExtResource("5_grh8x")]
+position = Vector2(395, 174)
+scale = Vector2(0.6, 0.6)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

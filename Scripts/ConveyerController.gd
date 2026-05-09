@@ -60,5 +60,5 @@ func send_event():
 			tween.tween_property(events[n], "position", destination[n%conveyerInd], 2).set_trans(tween.TRANS_LINEAR)
 			if n%conveyerInd==conveyerInd-1:
 				await tween.finished
-	if olderlevels:
+	if olderlevels or ConveyerController.conveyerInd<ConveyerController.conveyer.size():
 		Level.next_level()
