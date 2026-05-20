@@ -16,3 +16,6 @@ func _on_button_pressed() -> void:
 	$"../broker".duplicate_events()
 	
 	Level.initialise()
+	if $"../AnimatedSprite2D":
+		
+		$"../AnimatedSprite2D".frame = 1
