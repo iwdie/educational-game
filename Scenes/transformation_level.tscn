@@ -117,7 +117,7 @@ bbcode_enabled = true
 text = "[center]START"
 
 [node name="Draggable Filter" parent="." instance=ExtResource("8_rkagi")]
-position = Vector2(388, 347)
+position = Vector2(94, 209)
 scale = Vector2(0.5, 0.5)
 filterColor = "PinkRect"
 
@@ -129,7 +129,7 @@ text = "[center][b]FILTER PR
 "
 
 [node name="Draggable Filter3" parent="." instance=ExtResource("9_ga4w5")]
-position = Vector2(697, 283)
+position = Vector2(98, 64)
 scale = Vector2(0.5, 0.5)
 filterColor = "YellowRect"
 
