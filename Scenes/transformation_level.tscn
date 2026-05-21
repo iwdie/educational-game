@@ -156,17 +156,20 @@ script = ExtResource("15_b4lth")
 
 [node name="Button" type="Button" parent="Control2"]
 layout_mode = 0
-offset_right = 342.0
-offset_bottom = 132.0
+offset_left = -10.0
+offset_top = -5.0
+offset_right = 508.0
+offset_bottom = 195.0
 scale = Vector2(0.45, 0.45)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control2/Button"]
 layout_mode = 0
-offset_top = 37.0
-offset_right = 338.0
-offset_bottom = 110.0
+offset_left = 6.66667
+offset_top = 48.8888
+offset_right = 528.667
+offset_bottom = 191.889
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "[center]RESTART"
 
