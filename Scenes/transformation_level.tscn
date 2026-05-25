@@ -79,6 +79,14 @@ position = Vector2(403, 540)
 scale = Vector2(0.5, 0.5)
 expectedType = "PinkRect"
 
+[node name="ColorRect" type="ColorRect" parent="Sink"]
+offset_left = -86.0
+offset_top = 20.0
+offset_right = 72.0
+offset_bottom = 110.0
+mouse_filter = 2
+color = Color(0.901961, 0.121569, 0.576471, 1)
+
 [node name="BoxA" parent="." instance=ExtResource("6_3fr4m")]
 position = Vector2(402, 72)
 scale = Vector2(0.4, 0.4)
