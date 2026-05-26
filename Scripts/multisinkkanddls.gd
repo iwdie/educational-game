@@ -18,12 +18,11 @@ func _on_dls_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> v
 	
 	
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		dlsclicked=true
-		
+		dlsclicked = true
 		var dlqTrigger=$dlsConveyor
 		dlqTrigger.set_point_position(0, Vector2(544,230))
 		dlqTrigger.set_point_position(1, DLS.position+Vector2(80,0))
-		Level.dlsUsed = true
+
 
 
 
@@ -32,7 +31,7 @@ func _on_area_2d_area_entered(area):
 		print("we got a situation in here")
 		if dlsclicked:
 			var tween = get_tree().create_tween()
-			tween.tween_property(area.get_parent(), "position", dlspoint, 2).set_trans(Tween.TRANS_LINEAR)
+			tween.tween_property(area.get_parent(), "position", dlspoint + Vector2(60,0), 2).set_trans(Tween.TRANS_LINEAR)
 			await tween.finished # Replace with function body.
 		else:
 			var tween = get_tree().create_tween()
@@ -46,6 +45,10 @@ func _on_area_2d_area_entered(area):
 
 
 func _on_timer_timeout():
-	print(Level.sinkUsed)
 	Level.next_level()
 	# Replace with function body.
+
+
+func _on_dls_area_entered(area):
+	if area.is_in_group("Box"):
+		Level.dlsUsed = true# Replace with function body.
