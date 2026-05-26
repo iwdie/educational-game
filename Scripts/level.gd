@@ -1,14 +1,14 @@
 extends Node
-var sinkBoxMatchNeeded=[false,true,true,false,true]
+var sinkBoxMatchNeeded=[false,true,true,false,true,false]
 var sinkBoxMatchPresent
 var sinkUsed
-var dlsRequired=[false,false,false,true,false]
+var dlsRequired=[false,false,false,true,false,true]
 var dlsUsed
-var transformerRequired = [false,false,false,false,true]
+var transformerRequired = [false,false,false,false,true,false]
 var transformerUsed
 var totalbox=[2,2,3]
 var nextLevel
-var levels=["basicEventFlow","boxClick","multiSink","dlqPattern","transformation_level"]
+var levels=["basicEventFlow","boxClick","multiSink","dlqPattern","transformation_level","multiSinkAndDls"]
 var levelind=0
 
 func initialise():

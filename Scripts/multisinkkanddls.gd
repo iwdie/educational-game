@@ -6,7 +6,8 @@ var dlsclicked:bool = false
 @onready var blockagepoint = $Blockage.position
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Level.levelind = 5
+	ConveyerController.olderlevels = false# Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,9 +20,10 @@ func _on_dls_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> v
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		dlsclicked=true
 		
-		var dlqTrigger=$dlsconveyor
-		dlqTrigger.set_point_position(0, Vector2(529,250))
+		var dlqTrigger=$dlsConveyor
+		dlqTrigger.set_point_position(0, Vector2(544,230))
 		dlqTrigger.set_point_position(1, DLS.position+Vector2(80,0))
+		Level.dlsUsed = true
 
 
 
@@ -41,3 +43,9 @@ func _on_area_2d_area_entered(area):
 		
 		
 		
+
+
+func _on_timer_timeout():
+	print(Level.sinkUsed)
+	Level.next_level()
+	# Replace with function body.

@@ -1,83 +1,81 @@
-[gd_scene load_steps=14 format=3 uid="uid://dsi8b2h2tphpt"]
+[gd_scene load_steps=13 format=3 uid="uid://dsi8b2h2tphpt"]
 
-[ext_resource type="Script" path="res://multisinkkanddls.gd" id="1_s2gmi"]
-[ext_resource type="Texture2D" uid="uid://crbbdu26tlg2k" path="res://2D Assets/background.png" id="1_ui5bh"]
-[ext_resource type="PackedScene" uid="uid://cg1qlr4r42xs6" path="res://Scenes/box_b.tscn" id="2_k5unc"]
-[ext_resource type="PackedScene" uid="uid://c1r3b0105y0fm" path="res://Scenes/broker.tscn" id="3_k1xtj"]
-[ext_resource type="PackedScene" uid="uid://whu4rwgsyl8u" path="res://Scenes/sink.tscn" id="4_3k0vy"]
-[ext_resource type="PackedScene" uid="uid://cd34jg1k76o78" path="res://Scenes/both_blockage.tscn" id="5_c7lsp"]
-[ext_resource type="Script" path="res://Scenes/both_blockage.gd" id="6_xd8jc"]
-[ext_resource type="PackedScene" uid="uid://cdog2bwjc5gc6" path="res://Scenes/dls.tscn" id="7_1sycl"]
-[ext_resource type="Texture2D" uid="uid://dlnjpu1sbekqf" path="res://2D Assets/conveyer texture.png" id="7_14jlx"]
-[ext_resource type="Script" path="res://Scripts/conveyor.gd" id="8_rn6ks"]
-[ext_resource type="Script" path="res://Scripts/event_button.gd" id="11_p4fgg"]
-[ext_resource type="Script" path="res://Scripts/restart.gd" id="12_n4dkl"]
-[ext_resource type="PackedScene" uid="uid://p2kk0a6bpmai" path="res://Scenes/event_box.tscn" id="13_fqjk5"]
+[ext_resource type="Script" path="res://Scripts/multisinkkanddls.gd" id="1_7l5bd"]
+[ext_resource type="Texture2D" uid="uid://crbbdu26tlg2k" path="res://2D Assets/background.png" id="2_ysay2"]
+[ext_resource type="Texture2D" uid="uid://dlnjpu1sbekqf" path="res://2D Assets/conveyer texture.png" id="3_v2igg"]
+[ext_resource type="Script" path="res://Scripts/conveyor.gd" id="4_a2iqn"]
+[ext_resource type="PackedScene" uid="uid://cg1qlr4r42xs6" path="res://Scenes/box_b.tscn" id="5_7h5vs"]
+[ext_resource type="PackedScene" uid="uid://whu4rwgsyl8u" path="res://Scenes/sink.tscn" id="6_l2okc"]
+[ext_resource type="PackedScene" uid="uid://cdog2bwjc5gc6" path="res://Scenes/dls.tscn" id="7_dnjt8"]
+[ext_resource type="PackedScene" uid="uid://cd34jg1k76o78" path="res://Scenes/both_blockage.tscn" id="8_u8al4"]
+[ext_resource type="Script" path="res://Scripts/event_button.gd" id="9_g1mxc"]
+[ext_resource type="Script" path="res://Scripts/restart.gd" id="10_6cd2o"]
+[ext_resource type="PackedScene" uid="uid://p2kk0a6bpmai" path="res://Scenes/event_box.tscn" id="11_bjnfu"]
+[ext_resource type="PackedScene" uid="uid://c1r3b0105y0fm" path="res://Scenes/broker.tscn" id="12_qesp3"]
 
 [node name="multisinkanddls" type="Node2D"]
-script = ExtResource("1_s2gmi")
+script = ExtResource("1_7l5bd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.600807, 0.597976)
-texture = ExtResource("1_ui5bh")
+texture = ExtResource("2_ysay2")
 
 [node name="Conveyor4" type="Line2D" parent="."]
 texture_repeat = 2
 points = PackedVector2Array(0, 0, 0, 0)
 width = 100.0
-texture = ExtResource("7_14jlx")
+texture = ExtResource("3_v2igg")
 texture_mode = 1
-script = ExtResource("8_rn6ks")
+script = ExtResource("4_a2iqn")
 
 [node name="Conveyor3" type="Line2D" parent="."]
 texture_repeat = 2
 points = PackedVector2Array(0, 0, 0, 0)
 width = 100.0
-texture = ExtResource("7_14jlx")
+texture = ExtResource("3_v2igg")
 texture_mode = 1
-script = ExtResource("8_rn6ks")
+script = ExtResource("4_a2iqn")
 
 [node name="Conveyor2" type="Line2D" parent="."]
 texture_repeat = 2
 points = PackedVector2Array(0, 0, 0, 0)
 width = 100.0
-texture = ExtResource("7_14jlx")
+texture = ExtResource("3_v2igg")
 texture_mode = 1
-script = ExtResource("8_rn6ks")
+script = ExtResource("4_a2iqn")
 
-[node name="dlsconveyor" type="Line2D" parent="."]
+[node name="dlsConveyor" type="Line2D" parent="."]
 texture_repeat = 2
 points = PackedVector2Array(0, 0, 0, 0)
 width = 100.0
-texture = ExtResource("7_14jlx")
+texture = ExtResource("3_v2igg")
 texture_mode = 1
 
-[node name="BoxB" parent="." instance=ExtResource("2_k5unc")]
+[node name="BoxB" parent="." instance=ExtResource("5_7h5vs")]
 position = Vector2(581, 70)
 scale = Vector2(0.5, 0.5)
 
-[node name="Sink" parent="." instance=ExtResource("4_3k0vy")]
+[node name="Sink" parent="." instance=ExtResource("6_l2okc")]
 position = Vector2(145, 265)
 scale = Vector2(0.5, 0.5)
 
-[node name="Sink2" parent="." instance=ExtResource("4_3k0vy")]
+[node name="Sink2" parent="." instance=ExtResource("6_l2okc")]
 position = Vector2(983, 391)
 scale = Vector2(0.5, 0.5)
 
-[node name="Sink3" parent="." instance=ExtResource("4_3k0vy")]
+[node name="Sink3" parent="." instance=ExtResource("6_l2okc")]
 position = Vector2(636, 473)
 scale = Vector2(0.5, 0.5)
 
-[node name="dls" parent="." instance=ExtResource("7_1sycl")]
+[node name="dls" parent="." instance=ExtResource("7_dnjt8")]
 position = Vector2(358, 440)
 scale = Vector2(0.500001, 0.500001)
 
-[node name="Blockage" parent="." instance=ExtResource("5_c7lsp")]
+[node name="Blockage" parent="." instance=ExtResource("8_u8al4")]
 position = Vector2(581, 291)
 scale = Vector2(0.335, 0.335)
-script = ExtResource("6_xd8jc")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -87,7 +85,7 @@ offset_top = 28.0
 offset_right = 935.0
 offset_bottom = 68.0
 scale = Vector2(0.7, 0.7)
-script = ExtResource("11_p4fgg")
+script = ExtResource("9_g1mxc")
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
@@ -113,7 +111,7 @@ offset_top = 137.0
 offset_right = 936.0
 offset_bottom = 177.0
 scale = Vector2(0.7, 0.7)
-script = ExtResource("12_n4dkl")
+script = ExtResource("10_6cd2o")
 
 [node name="Button" type="Button" parent="Control2"]
 layout_mode = 0
@@ -131,18 +129,23 @@ theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center]RESTART"
 
-[node name="BoxA" parent="." instance=ExtResource("13_fqjk5")]
+[node name="BoxA" parent="." instance=ExtResource("11_bjnfu")]
 position = Vector2(558.833, 96.333)
 scale = Vector2(0.5, 0.5)
 
-[node name="broker" parent="." instance=ExtResource("3_k1xtj")]
+[node name="broker" parent="." instance=ExtResource("12_qesp3")]
 position = Vector2(591, 173)
 scale = Vector2(0.5, 0.5)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.7
 
 [connection signal="input_event" from="dls" to="." method="_on_dls_input_event"]
 [connection signal="area_entered" from="Blockage/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
 [connection signal="pressed" from="Control2/Button" to="Control2" method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
+[editable path="Sink"]
 [editable path="dls"]
 [editable path="Blockage"]
