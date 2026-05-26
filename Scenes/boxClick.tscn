@@ -12,20 +12,6 @@
 [ext_resource type="Script" path="res://Scripts/restart.gd" id="10_rwca5"]
 [ext_resource type="PackedScene" uid="uid://c1r3b0105y0fm" path="res://Scenes/broker.tscn" id="11_qr1nn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yukuu"]
-bg_color = Color(0.396802, 0.593587, 0.949038, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahp62"]
-bg_color = Color(0.900372, 0.458096, 0.249774, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [node name="base" type="Node2D"]
 
 [node name="Panel" type="Panel" parent="."]
@@ -117,26 +103,6 @@ scale = Vector2(0.6, 0.6)
 [node name="broker" parent="." instance=ExtResource("11_qr1nn")]
 position = Vector2(576, 186)
 scale = Vector2(0.6, 0.6)
-
-[node name="Panel" type="Panel" parent="Draggable Filter2"]
-visible = false
-offset_left = 84.9997
-offset_top = -115.0
-offset_right = 263.0
-offset_bottom = -57.0003
-theme_override_styles/panel = SubResource("StyleBoxFlat_ahp62")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Draggable Filter2/Panel"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 10.0
-offset_right = 175.0
-offset_bottom = 50.0
-theme_override_fonts/normal_font = ExtResource("11_qmrvh")
-theme_override_font_sizes/bold_italics_font_size = 10
-theme_override_font_sizes/normal_font_size = 22
-bbcode_enabled = true
-text = "RED FILTER"
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
 [connection signal="pressed" from="Control2/Button" to="Control2" method="_on_button_pressed"]

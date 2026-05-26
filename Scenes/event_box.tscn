@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b00w453hqw7wx" path="res://2D Assets/boxes/redBox.png" id="1_7cv2t"]
 [ext_resource type="Script" path="res://Scripts/event_box.gd" id="2_3qheb"]
-[ext_resource type="FontFile" uid="uid://btxwuo5y3bcni" path="res://Fonts/Sigmar-Regular.ttf" id="3_bnkqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6uvdh"]
 size = Vector2(211.428, 211.429)
