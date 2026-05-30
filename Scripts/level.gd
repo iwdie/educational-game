@@ -26,10 +26,10 @@ func  next_level():
 			nextLevel=true
 		elif dlsRequired[levelind] and sinkBoxMatchNeeded[levelind] and dlsUsed and sinkBoxMatchPresent:
 			nextLevel=true
-		elif sinkBoxMatchNeeded[levelind] and sinkBoxMatchPresent and not dlsRequired:
+		elif sinkBoxMatchNeeded[levelind] and sinkBoxMatchPresent and not dlsRequired[levelind]:
 			print("elif next level entered",sinkBoxMatchNeeded,sinkBoxMatchPresent)
 			nextLevel=true
-		elif dlsRequired[levelind] and dlsUsed:
+		elif dlsRequired[levelind] and dlsUsed and not sinkBoxMatchNeeded:
 			print("elif dls",dlsUsed)
 			nextLevel=true
 		elif transformerRequired[levelind] and transformerUsed and sinkBoxMatchPresent:
